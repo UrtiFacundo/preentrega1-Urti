@@ -1,87 +1,36 @@
-let compra = prompt ("BienveniodoDesea adquirir un servicio o un box?");
-if(compra === "servicio"){
-    console.log("1: branding");
-    console.log("2: publicidad");
-    console.log("3: social media");
-    console.log("4: web development");
-    
-    let op = prompt ("ingrese el numero del servicio que desea comprar: \n1. Brandin. \n2. Publicidad. \n3. Social Media. \n4. Web Development.");
- 
-switch(op){
-    case "1":
-        let tarjeta =( prompt("para adquirir el servicio de branding, ingrese num de tarjeta"))
-    if(Number(tarjeta)){
-    alert('Felicidades, usted adquirio el servicio de Branding');
-    }
-    if(isNaN(tarjeta)){
-        alert('ingrese una tarjeta valida');
-    }
-    }
-    switch(op){
-        case "1":
-            let tarjeta =( prompt("para adquirir el servicio de branding, ingrese numero de tarjeta"))
-        if(Number(tarjeta)){
-        alert('Felicidades, usted adquirio el servicio de Branding');
-        }
-        if(isNaN(tarjeta)){
-            alert('ingrese una tarjeta valida');
-        }
-        }
-        switch(op){
-    case "2":
-        let tarjeta =( prompt("para adquirir el servicio de publicidad, ingrese numero de tarjeta"))
-    if(Number(tarjeta)){
-    alert('Felicidades, usted adquirio el servicio de publicidad');
-    }
-    if(isNaN(tarjeta)){
-        alert('ingrese una tarjeta valida');
-    }
-    }
-    switch(op){
-        case "3":
-            let tarjeta =( prompt("para adquirir el servicio de Social Media, ingrese numero tarjeta"))
-        if(Number(tarjeta)){
-        alert('Felicidades, usted adquirio el servicio de Social Media');
-        }
-        if(isNaN(tarjeta)){
-            alert('ingrese una tarjeta valida');
-        }
-        }
-        switch(op){
-            case "4":
-                let tarjeta =( prompt("para adquirir el servicio de Web Development, ingrese numero tarjeta"))
-            if(Number(tarjeta)){
-            alert('Felicidades, usted adquirio el servicio de Web Development');
-            }
-            if(isNaN(tarjeta)){
-                alert('ingrese una tarjeta valida');
-            }
-            }
+const servicios = [
+    { titulo: "Branding", precio: 5300},
+    { titulo: "Publicidad", precio: 15100},
+    { titulo: "Social Media", precio: 6700},
+    { titulo: "Web Development", precio: 12900}
+
+];
+let servicioElegido = prompt("ingrese el servicio que desea adquirir \n1. Branding. \n2. Publicidad. \n3. Social Media. \n4. Web Development.");
+
+console.log( servicios.find((servicios) => servicio.titulo === servicioElegido ) );
+
+const boxes = [
+    { titulo: "Branding y Web Development", precio: 18200},
+    { titulo: "Publicidad y Social Media", precio: 21800},
+]
+
+//const descuento = 20
+let BoxesElegido = prompt("ingrese el boxes que desea adquirir \n1. Branding y Web Development. \n2. Publicidad y Social Media. ");
+
+console.log( boxes.find((boxes) => boxes.titulo === BoxesElegido ) );
 
 
-} else if (compra === "box"){
-    console.log("a: Branding & web Development");
-    console.log("b: Social Media & Publicidad");
- let op = prompt ("ingrese la letra del BOX que desea comprar: \nA. Brandin & Web Development. \nB. Social Media & Publicidad");
-
- switch(op){
-    case "a":
-        let tarjeta =( prompt("para adquirir el BOX de Branding & Web Development, ingrese numero de tarjeta"))
-    if(Number(tarjeta)){
-    alert('Felicidades, usted adquirio el BOX de Branding & Web Development');
+function aplicarPorcentaje(boxes, descuento) {
+    const resultado = [];
+    for (let i=0; i<boxes.length; i++){
+        const precio = boxes[i];
+        const procentajeAplicado = precio * (descuento/100);
+    resultado.push(porcentajeAplicado);
     }
-    if(isNaN(tarjeta)){
-        alert('ingrese una tarjeta valida');
-    }
-    }
-    switch(op){
-        case "b":
-            let tarjeta =( prompt("para adquirir el BOX de Social Media & Publicidad, ingrese numero de tarjeta"))
-        if(Number(tarjeta)){
-        alert('Felicidades, usted adquirio el BOX de Social Media & Publicidad');
-        }
-        if(isNaN(tarjeta)){
-            alert('ingrese una tarjeta valida');
-        }
-        }
+    return resultado;
 }
+const numerosConPorcentajes = aplicarPorcentaje(precio, 20);
+
+console.log(numerosConPorcentajes);
+
+
